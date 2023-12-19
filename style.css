@@ -9,6 +9,12 @@ ul {
 a {
   text-decoration: none;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 20px;
+}
 header {
   display: flex;
   flex-direction: row;
@@ -43,6 +49,7 @@ header {
 main {
   display: grid;
   justify-content: center;
+  flex-grow: 1;
 }
 main h2 {
   padding-left: 140px;
@@ -63,6 +70,37 @@ main h2 {
   display: flex;
   justify-content: space-between;
 }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+footer > div,
+address > ul {
+  display: grid;
+  gap: 10px;
+}
+address > ul ul {
+  display: flex;
+  gap: 10px;
+}
+address > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width:800px) {
+    footer > img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+    }
+}
 @media (max-width: 600px) {
   .about h2 {
     text-align: center;
@@ -73,5 +111,14 @@ main h2 {
   main h2 {
     padding-left: 0;
     text-align: center;
+  }
+  footer {
+    padding: 0;
+  }
+  footer h2 {
+    text-align: center;
+  }
+  address > ul ul {
+    justify-content: center;
   }
 }
