@@ -3,7 +3,55 @@
   margin: 0;
   padding: 0;
 }
- 
+ul {
+  list-style: none;
+}
 a {
   text-decoration: none;
 }
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  gap: 10px;
+  justify-content: center;
+  padding: 20px 0;
+}
+.profile {
+  position: relative;
+  text-align: center;
+}
+.profile h1{
+  position: relative;
+  bottom: 42px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  align-self: center;
+}
+
+.about ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+@media (max-width:600px) {
+  .about h2 {
+    text-align: center;
+  }
+  .about ul {
+    justify-content: center;
+  }
+}
+
+/* @media (max-width:800px)  and (min-width:600px) {
+  .about ul {
+    display: none;
+  }
+} */
