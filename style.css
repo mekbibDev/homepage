@@ -12,7 +12,7 @@ a {
 header {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   padding: 20px 0;
@@ -21,7 +21,7 @@ header {
   position: relative;
   text-align: center;
 }
-.profile h1{
+.profile h1 {
   position: relative;
   bottom: 42px;
 }
@@ -40,18 +40,38 @@ header {
   gap: 10px;
 }
 
+main {
+  display: grid;
+  justify-content: center;
+}
+main h2 {
+  padding-left: 140px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 150px;
+  justify-content: center;
+}
 
-@media (max-width:600px) {
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+.card span {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
   .about h2 {
     text-align: center;
   }
   .about ul {
     justify-content: center;
   }
-}
-
-/* @media (max-width:800px)  and (min-width:600px) {
-  .about ul {
-    display: none;
+  main h2 {
+    padding-left: 0;
+    text-align: center;
   }
-} */
+}
