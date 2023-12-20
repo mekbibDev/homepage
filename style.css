@@ -188,3 +188,9 @@ address > ul > li > a {
     justify-content: center;
   }
 }
+
+@media (min-width:1600px) {
+  .profile h1 {
+    left: 40px;
+  }
+}
