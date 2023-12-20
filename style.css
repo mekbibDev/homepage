@@ -9,29 +9,33 @@ ul {
 a {
   text-decoration: none;
 }
+
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
   gap: 20px;
 }
-header {
+
+header  > div{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   padding: 20px 0;
+  position: relative;
 }
+
 .profile {
   position: relative;
   text-align: center;
 }
 .profile h1 {
-  position: relative;
-  bottom: 42px;
+  left: 30px;
+  bottom: 20px;
+  position: absolute;
 }
-
 .about {
   display: flex;
   flex-direction: column;
@@ -44,6 +48,10 @@ header {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+}
+header > div > h1 {
+  position: absolute;
+  top: 250px;
 }
 
 main {
@@ -92,6 +100,40 @@ address > ul > li > a {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+@media (min-width:600px) and (max-width:800px) {
+  header {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem; 
+    padding-top: 100px;
+  }
+  .about {
+    display: block;
+    position: relative;
+    max-width: 600px;
+  }
+  .about ul {
+    display: none;
+  }
+  header > div {
+    display: block;
+  }
+  .profile img {
+    float: left;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: -20px;
+    margin-top: -80px;
+    padding-right: 10px;
+  }
+  .profile h1 {
+    left: 250px;
+  }
+  .about> h2 {
+    text-align: center;
+  }
 }
 
 @media (min-width:800px) {
