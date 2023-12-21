@@ -36,7 +36,12 @@ ul {
 a {
   text-decoration: none;
 }
-
+a > img{
+  transition: transform 0.5s;
+}
+a > img:hover{
+  transform: scale(1.5);
+}
 body {
   display: flex;
   flex-direction: column;
