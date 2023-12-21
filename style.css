@@ -3,12 +3,15 @@
   margin: 0;
   padding: 0;
 }
-@import url('https://fonts.googleapis.com/css?family=Kiwi%20Maru:700|Kiwi%20Maru:400');
-
-body {
-  font-family: 'Kiwi Maru';
-  font-weight: 400;
+:root {
+  --text: #000000;
+  --background: #fcfcfd;
+  --primary: #9195AC;
+  --secondary: #b1adc2;
+  --accent: #BBB3C6;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Kiwi%20Maru:700|Kiwi%20Maru:400');
 
 h1, h2, h3, h4, h5 {
   font-family: 'Kiwi Maru';
@@ -39,32 +42,49 @@ body {
   flex-direction: column;
   height: 100vh;
   gap: 20px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Kiwi Maru';
+  font-weight: 400;
+}
+header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary);
+  clip-path: polygon(0 0, 100% 0, 100% 28%, 0 71%);
 }
 
 header  > div{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
   padding: 20px 0;
-  position: relative;
 }
 
 .profile {
-  position: relative;
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 .profile h1 {
-  bottom: 20px;
-  position: absolute;
+  bottom: 70px;
+  position: relative;
 }
 .about {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 400px;
+  max-width: 500px;
   align-self: center;
+  background-color: var(--secondary);
+  padding: 20px;
+  box-shadow: 1px 1px 3px #8f8181;
 }
 
 .about ul {
@@ -96,6 +116,13 @@ main h2 {
   display: flex;
   flex-direction: column;
   max-width: 200px;
+  
+}
+.card > div {
+  background-color: var(--accent);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #8f8181;
 }
 .card span {
   display: flex;
@@ -110,6 +137,7 @@ footer {
   align-items: center;
   gap: 20px;
   padding: 20px;
+  background-color: var(--primary);
 }
 footer > div,
 address > ul {
@@ -119,12 +147,19 @@ address > ul {
 address > ul ul {
   display: flex;
   gap: 10px;
+  
+}
+address > ul > li  {
+  font-size: 1.5rem;
 }
 address > ul > li > a {
   display: flex;
   align-items: center;
   gap: 4px;
+  color: var(--text);
 }
+
+
 @media (min-width:600px) and (max-width:800px) {
   header {
     display: flex;
@@ -153,21 +188,28 @@ address > ul > li > a {
     padding-right: 10px;
   }
   .profile h1 {
-    left: 250px;
+    left: -90px;
   }
   .about> h2 {
     text-align: center;
   }
 }
 
-@media (min-width:800px) {
+@media (min-width:600px) {
     footer > img {
       width: 400px;
       height: 250px;
       object-fit: cover;
     }
 }
+
 @media (max-width: 600px) {
+  header::before {
+    clip-path: polygon(0 0, 100% 0, 100% 72%, 0 74%);
+  }
+  .profile h1 {
+    font-size: 2.369rem;
+  }
   .about h2 {
     text-align: center;
   }
@@ -187,10 +229,8 @@ address > ul > li > a {
   address > ul ul {
     justify-content: center;
   }
-}
-
-@media (min-width:1600px) {
-  .profile h1 {
-    left: 40px;
+  address > ul > li  {
+    font-size: 1.5rem;
+    max-width: 300px;
   }
 }
